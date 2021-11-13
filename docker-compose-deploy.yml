@@ -2,7 +2,7 @@ version: "3"
 
 services:
   vote:
-    image: catapas/entrega_vote:%VERSION%
+    image: catapas/entrega_vote:${Version}
     ports:
       - "5000:80"
     networks:
@@ -10,7 +10,7 @@ services:
       - back-tier
 
   result:
-    image: catapas/entrega_result:%VERSION%
+    image: catapas/entrega_result:${Version}
     ports:
       - "5001:80"
       - "5858:5858"
@@ -19,7 +19,7 @@ services:
       - back-tier
 
   worker:
-    image: catapas/entrega_worker:%VERSION%
+    image: catapas/entrega_worker:${Version}
     build:
       context: ./worker
       dockerfile: Dockerfile.j
