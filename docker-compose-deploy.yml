@@ -19,7 +19,7 @@ services:
       - back-tier
 
   worker:
-  image:catapas/entrega_worker:${VERSION}
+    image: catapas/entrega_worker:${VERSION}
     build:
       context: ./worker
       dockerfile: Dockerfile.j
