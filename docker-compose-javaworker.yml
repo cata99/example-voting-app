@@ -6,6 +6,8 @@ services:
     command: python app.py
     volumes:
      - ./vote:/app
+    environment: 
+     -  VERSION
     ports:
       - "5000:80"
     networks:
@@ -17,6 +19,8 @@ services:
     command: nodemon server.js
     volumes:
       - ./result:/app
+    environment: 
+     -  VERSION
     ports:
       - "5001:80"
       - "5858:5858"
@@ -28,6 +32,8 @@ services:
     build:
       context: ./worker
       dockerfile: Dockerfile.j
+    environment: 
+     -  VERSION
     networks:
       - back-tier
 
