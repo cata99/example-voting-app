@@ -20,9 +20,6 @@ services:
 
   worker:
     image: "catapas/entrega_worker:${VERSION}"
-    build:
-      context: ./worker
-      dockerfile: Dockerfile.j
     networks:
       - back-tier
 
